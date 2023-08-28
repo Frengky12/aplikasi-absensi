@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 28, 2023 at 02:45 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.5
+-- Waktu pembuatan: 28 Agu 2023 pada 17.15
+-- Versi server: 10.4.27-MariaDB
+-- Versi PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data_absensi`
+-- Struktur dari tabel `data_absensi`
 --
 
 CREATE TABLE `data_absensi` (
@@ -36,27 +36,23 @@ CREATE TABLE `data_absensi` (
   `attachment` varchar(250) NOT NULL,
   `alasan` varchar(1200) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `data_absensi`
+-- Dumping data untuk tabel `data_absensi`
 --
 
 INSERT INTO `data_absensi` (`id`, `id_users`, `tgl_absen`, `keterangan`, `kegiatan`, `attachment`, `alasan`, `created_at`) VALUES
 (1, 5, '2023-08-19 09:47:19', '1', 'asd', 'attachment.png', '', '2023-08-21 15:44:42'),
-(12, 5, '2023-08-23 21:00:35', '1', '', '64e6110332347.png', '', '2023-08-23 14:00:35'),
-(17, 5, '2023-08-26 14:14:36', '1', 'Test Absen From dashboard', '64e9a65c3cacd.png', '', '2023-08-26 07:14:36'),
 (18, 6, '2023-08-26 14:15:27', '1', 'Test Absen From Public Edi', '64e9ab07376b5.png', '', '2023-08-28 07:47:54'),
-(19, 6, '2023-08-28 08:01:40', '1', 'input data kecamatan batang hari leko', '64ebf1f47ce79.jpg', '', '2023-08-28 01:01:40'),
 (20, 7, '2023-08-28 08:07:29', '1', 'maen hp', '64ebf351132f0.jpg', '', '2023-08-28 08:18:47'),
 (21, 5, '2023-08-28 12:04:40', '1', 'input data', '64ec2ae8bde28.jpg', '', '2023-08-28 05:04:40'),
-(22, 8, '2023-08-28 15:03:03', '1', 'maen ps lt 2', '64ec54b7de82a.jpg', '', '2023-08-28 08:04:10'),
-(23, 10, '2023-08-28 15:38:15', '2', '', '64ec5cf71a08b.jpg', 'cuti', '2023-08-28 08:38:15');
+(22, 8, '2023-08-28 15:03:03', '1', 'maen ps lt 2', '64ec54b7de82a.jpg', '', '2023-08-28 08:04:10');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data_peserta`
+-- Struktur dari tabel `data_peserta`
 --
 
 CREATE TABLE `data_peserta` (
@@ -70,10 +66,10 @@ CREATE TABLE `data_peserta` (
   `id_lokasi` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `deleted_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `data_peserta`
+-- Dumping data untuk tabel `data_peserta`
 --
 
 INSERT INTO `data_peserta` (`id`, `users_id`, `nama`, `tgl_masuk`, `tgl_keluar`, `asal`, `is_active`, `id_lokasi`, `created_at`, `deleted_at`) VALUES
@@ -88,7 +84,7 @@ INSERT INTO `data_peserta` (`id`, `users_id`, `nama`, `tgl_masuk`, `tgl_keluar`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `master_lokasi`
+-- Struktur dari tabel `master_lokasi`
 --
 
 CREATE TABLE `master_lokasi` (
@@ -96,10 +92,10 @@ CREATE TABLE `master_lokasi` (
   `nama` varchar(120) NOT NULL,
   `created_at` datetime NOT NULL,
   `deleted_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `master_lokasi`
+-- Dumping data untuk tabel `master_lokasi`
 --
 
 INSERT INTO `master_lokasi` (`id`, `nama`, `created_at`, `deleted_at`) VALUES
@@ -123,7 +119,7 @@ INSERT INTO `master_lokasi` (`id`, `nama`, `created_at`, `deleted_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `master_status`
+-- Struktur dari tabel `master_status`
 --
 
 CREATE TABLE `master_status` (
@@ -131,10 +127,10 @@ CREATE TABLE `master_status` (
   `nama` varchar(120) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `deleted_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `master_status`
+-- Dumping data untuk tabel `master_status`
 --
 
 INSERT INTO `master_status` (`id`, `nama`, `created_at`, `deleted_at`) VALUES
@@ -145,7 +141,7 @@ INSERT INTO `master_status` (`id`, `nama`, `created_at`, `deleted_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -157,10 +153,10 @@ CREATE TABLE `users` (
   `foto` varchar(50) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `deleted_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `users`
 --
 
 INSERT INTO `users` (`id`, `nama`, `username`, `password`, `level`, `foto`, `created_at`, `deleted_at`) VALUES
@@ -177,65 +173,65 @@ INSERT INTO `users` (`id`, `nama`, `username`, `password`, `level`, `foto`, `cre
 --
 
 --
--- Indexes for table `data_absensi`
+-- Indeks untuk tabel `data_absensi`
 --
 ALTER TABLE `data_absensi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `data_peserta`
+-- Indeks untuk tabel `data_peserta`
 --
 ALTER TABLE `data_peserta`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `master_lokasi`
+-- Indeks untuk tabel `master_lokasi`
 --
 ALTER TABLE `master_lokasi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `master_status`
+-- Indeks untuk tabel `master_status`
 --
 ALTER TABLE `master_status`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `data_absensi`
+-- AUTO_INCREMENT untuk tabel `data_absensi`
 --
 ALTER TABLE `data_absensi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
--- AUTO_INCREMENT for table `data_peserta`
+-- AUTO_INCREMENT untuk tabel `data_peserta`
 --
 ALTER TABLE `data_peserta`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `master_lokasi`
+-- AUTO_INCREMENT untuk tabel `master_lokasi`
 --
 ALTER TABLE `master_lokasi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT for table `master_status`
+-- AUTO_INCREMENT untuk tabel `master_status`
 --
 ALTER TABLE `master_status`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
