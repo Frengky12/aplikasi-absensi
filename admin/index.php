@@ -24,6 +24,7 @@
     $oktober = 0;
     $november = 0;
     $desember = 0;
+    $test_git = 0;
 
 
     foreach ($data_peserta as $key) {
