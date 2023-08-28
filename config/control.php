@@ -340,6 +340,22 @@ function update_absen($post,$from)
 
 }
 
+function hapusAbsen($id)
+{
+    global $db;
+
+    $foto = query("SELECT * FROM data_absensi WHERE id = $id")[0]['attachment'] ;
+
+    $aaa = unlink("../assets/img/attachment/file-absensi/". $foto);
+
+    $query = "DELETE FROM data_absensi WHERE id = $id";
+
+    mysqli_query($db, $query);
+
+    return mysqli_affected_rows($db);
+
+}
+
 function upload_foto_absensi($from)
 {
     // var_dump($from);

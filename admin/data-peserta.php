@@ -23,6 +23,7 @@
 
         </div>
         <div class="card-body text-center">
+        <a href="../export/export-data-peserta.php" class="btn btn-sm btn-success float-left mb-2"><i class="fas fa-print"> Print Data Peserta</i></a>
         <a href="tambah-data-peserta.php" class="btn btn-sm btn-primary float-right mb-2"><i class="fas fa-plus"></i> Tambah Peserta</a>
 
             <div class="table-responsive">

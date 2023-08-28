@@ -108,14 +108,14 @@ $akun = query("SELECT * FROM users WHERE id = '$id'")[0];
             </li>
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item <?php if ($title == 'data-kegiatan'){echo 'active';} ?>">
+            <!-- <li class="nav-item <?php if ($title == 'data-kegiatan'){echo 'active';} ?>">
                 <a class="nav-link" href="data-kegiatan.php">
                     <i class="fas fa-fw fa-book"></i>
                     <span>
                         Data Kegiatan
                     </span>
                 </a>
-            </li>
+            </li> -->
 
             <!-- Divider -->
             <hr class="sidebar-divider">

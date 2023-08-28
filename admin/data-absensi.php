@@ -140,9 +140,10 @@
                             </td>
                             <td><?php if ($data['alasan'] == '') { ?>
                                 -
-                            <?php }else{ ?></td>
+                            <?php }else{ ?>
                                 <?= $data['alasan'] ?>
                             <?php } ?>
+                            </td>
                             <td>
                                 <a href="" data-toggle="modal" data-target="#modalAbsen<?= $data['id']; ?>" class="btn btn-success btn-sm text-white" title="edit"><i class="fas fa-edit"></i> Edit</a>
                             <?php if ($akun['level'] == 1) { ?>
@@ -337,6 +338,24 @@
         }
         
     }
+</script>
+
+<script>
+        function onHapus(id){
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "Yakin Data Akan Dihapus ?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Delete'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.location.href = 'hapus-data-absensi.php?id='+ id
+                }
+            })
+        }
 </script>
 
 

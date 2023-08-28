@@ -24,7 +24,6 @@
     $oktober = 0;
     $november = 0;
     $desember = 0;
-    $test_git = 0;
 
 
     foreach ($data_peserta as $key) {
@@ -252,7 +251,10 @@
 
                                                 if ($current_absen != $last_absen) {
                                                     echo '<div class="h5 text-dark">Anda Belum Absen Hari ini, Silahkan Absen ke link berikut :</div>';
+                                                    echo '<br>';
                                                     echo '<a href="data-absensi.php" class="btn btn-sm btn-outline-primary">Go Absen !</a>';
+                                                }else{
+                                                    echo '<div class="h4 mt-1">Anda Telah Absen Hari ini, jangan lupa isi data kegiatan anda pada menu Data Absensi</div>';
                                                 }
                                             }elseif ($current_hour >= 12 && $current_hour <= 17) {
                                                 echo 'Siang ' . $akun['nama'];
@@ -261,6 +263,8 @@
                                                     echo '<div class="h5 text-dark">Anda Belum Absen Hari ini, Silahkan Absen ke link berikut :</div>';
                                                     echo '<br>';
                                                     echo '<a href="data-absensi.php" class="btn btn-sm btn-outline-primary">Go Absen !</a>';
+                                                }else{
+                                                    echo '<div class="h4 mt-1">Anda Telah Absen Hari ini, jangan lupa isi data kegiatan anda pada menu Data Absensi</div>';
                                                 }
                                             }else{
                                                 echo 'Malam ' . $akun['nama'];
@@ -314,7 +318,7 @@
                             </div>
                         </div>
 
-                        <div class="col-xl-6 col-md-6 mb-3">
+                        <div class="col-xl-4 col-md-4 mb-3">
                             <div class="card border-secondary shadow">
                                 <!-- Card Header - Dropdown -->
                                 <div class="card-header py-3">
@@ -331,7 +335,7 @@
                             </div>
                         </div>
 
-                        <div class="col-xl-6 col-md-6 mb-3">
+                        <div class="col-xl-8 col-md-8 mb-3">
                             <div class="card border-secondary shadow">
                                 <!-- Card Header - Dropdown -->
                                 <div class="card-header py-3">
